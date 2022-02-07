@@ -15,7 +15,7 @@ const deploy = async () => {
 
   console.log("Attempting to deploy from account", accounts[0]);
   // Pass the abi to the contract object
-  const result = await new web3.eth.Contract(JSON.parse(abi))
+  const result = await new web3.eth.Contract(abi)
     // Assign the bytecode to the data property of the deploy method
     .deploy({ data: evm.bytecode.object })
     .send({ gas: "1000000", from: accounts[0] });
